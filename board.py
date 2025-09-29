@@ -28,6 +28,17 @@ class Board:
 
 			self.fields.append(row)
 
+	def update(self):
+		point = pg.mouse.get_pos()
+
+		for fields in self.fields:
+			for field in fields:
+				if field.rect.collidepoint(point):
+					field.color = "yellow"
+				else:
+					field.color = "#F7F7F7"
+
+
 	def draw(self, surface):
 		pg.draw.rect(surface, 'lightgreen', self.board)
 
