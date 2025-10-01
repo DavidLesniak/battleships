@@ -15,7 +15,15 @@ class UI:
 		if slot == 2:
 			new_player = Text(700-1, 0, player.name)
 			new_player.update()
-			self.players.insert(1, new_player)
+			self.players.insert(2, new_player)
+
+	def move_player(self, player):
+		move_player = Text(0, 0, player.name)
+		move_player.update()
+		move_player.rect.center = self.bar.center
+
+		self.players.insert(1, move_player)
+
 
 	def draw(self, surface):
 		pg.draw.rect(surface, self.color, self.bar)
